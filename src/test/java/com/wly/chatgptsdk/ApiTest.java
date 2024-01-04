@@ -58,7 +58,13 @@ public class ApiTest {
         // 1. 创建参数
         ChatCompletionRequest chatCompletion = ChatCompletionRequest
                 .builder()
-                .messages(Collections.singletonList(Message.builder().role(Constants.Role.USER).content("请给我写一个快速排序用golang实现").build()))
+                .messages(Collections.singletonList(Message.builder().role(Constants.Role.USER).content("请给用python解答下面的问题：" +
+                        "• Given two arrays that have the same values but in a different \n" +
+                        "order and having no duplicate elements in it, we need to make \n" +
+                        "a second array the same as a first array using the minimum \n" +
+                        "number of swaps. \n" +
+                        "• Design an algorithm to implement this function.").build()))
+
                 .model(ChatCompletionRequest.Model.GPT_4.getCode())
                 .build();
         // 2. 发起请求
