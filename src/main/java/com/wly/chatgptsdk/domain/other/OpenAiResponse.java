@@ -24,4 +24,5 @@ public class OpenAiResponse<T> implements Serializable {
         private String code;
     }
 
+
 }
