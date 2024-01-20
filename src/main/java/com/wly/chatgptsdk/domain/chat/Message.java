@@ -12,7 +12,6 @@ import java.io.Serializable;
  */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
-
 public class Message implements Serializable {
     private String role;
     private String content;

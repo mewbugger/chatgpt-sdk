@@ -190,6 +190,7 @@ public class DefaultOpenAiSession implements OpenAiSession {
                     // 尝试将内容追加到dataBuffer
                     try {
                         dataBuffer.append(delta.getContent());
+                        System.out.println(delta.getContent());
                     } catch (Exception e) {
                         future.completeExceptionally(new RuntimeException("Request closed before completion"));
                     }

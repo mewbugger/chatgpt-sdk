@@ -32,6 +32,8 @@ import java.util.concurrent.CompletableFuture;
 /**
  * 会话接口OpenAiSession与IOpenAiApi看上去是有些类似的。
  * 其实和MyBatis的会话接口一样，Mybatis中的会话接口有增删改查4个方法，但执行器里其实只应对了2个方法
+ * Mybatis的执行器里其实只有插入和修改两个方法，但是在会话接口里有增和删改查（修改的变体）4个接口
+ * 这里IOpenAiApi类比Mybatis中的执行器，OpenAiSession类比Mybatis中的会话接口
  * 该接口可以封装出各类需要的扩展方法
  */
 

@@ -1,6 +1,5 @@
 package com.wly.chatgptsdk.domain.other;
 import lombok.Data;
-
 import java.io.Serializable;
 import java.util.List;
 
@@ -23,6 +22,4 @@ public class OpenAiResponse<T> implements Serializable {
         private String param;
         private String code;
     }
-
-
 }

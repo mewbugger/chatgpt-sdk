@@ -9,7 +9,6 @@ import com.wly.chatgptsdk.domain.edits.EditResponse;
 import com.wly.chatgptsdk.domain.embedd.EmbeddingRequest;
 import com.wly.chatgptsdk.domain.embedd.EmbeddingResponse;
 import com.wly.chatgptsdk.domain.files.DeleteFileResponse;
-
 import com.wly.chatgptsdk.domain.files.UploadFileResponse;
 import com.wly.chatgptsdk.domain.images.ImageRequest;
 import com.wly.chatgptsdk.domain.images.ImageResponse;
@@ -33,6 +32,24 @@ import java.util.Map;
  * 这个接口是没有对应的硬编码实现类的，它的存在只是定义标准，
  * 之后由 Retrofit 工具包进行创建服务，如：IOpenAiApi openAiApi = new Retrofit.Builder()
  * 可以把这想象成是对 DAO 接口与数据库的连接数据源之间的操作。
+ *
+ * Retrofit 使用动态代理来自动创建接口的实现。当你调用这个接口的方法时，Retrofit 会自动处理 HTTP 请求和响应。
+ * Retrofit retrofit = new Retrofit.Builder()
+ *     .baseUrl("https://api.openai.com/")
+ *     .addConverterFactory(GsonConverterFactory.create())
+ *     .build();
+ *
+ * IOpenAiApi openAiApi = retrofit.create(IOpenAiApi.class);
+ * openAiApi.method();
+ * 可以把这想象成是对 DAO 接口与数据库的连接数据源之间的操作。
+ *      DAO 模式的关键点：
+ *          接口定义：定义了一系列与数据源交互的方法。
+ *          实现类：具体实现这些接口的类，处理与数据库的直接交互。
+ *          数据源：数据库或其他数据存储。
+ *      在使用 Retrofit 的场景中：
+ *          IOpenAiApi 接口：定义了一系列与 OpenAI API 交互的方法，类似于 DAO 接口定义数据库操作。
+ *          Retrofit 动态实现：Retrofit 动态创建 IOpenAiApi 接口的实现，这与手动编写 DAO 实现类的过程不同。在 Retrofit 中，这部分是自动完成的。
+ *          远程 API 服务：在这个情况下，OpenAI API 是数据源，类似于数据库在 DAO 模式中的角色。
  */
 public interface IOpenAiApi {
 
@@ -51,7 +68,6 @@ public interface IOpenAiApi {
 
     /**
      * 问答模型；默认 GPT-3.5
-     *
      * @param chatCompletionRequest 请求信息
      * @return 应答结果
      */

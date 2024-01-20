@@ -9,6 +9,32 @@ import java.util.List;
 /**
  * 对话请求结果信息
  */
+
+/**
+ * 官方的请求对话结果响应结构体
+ * {
+ *   "choices": [
+ *     {
+ *       "finish_reason": "stop",
+ *       "index": 0,
+ *       "message": {
+ *         "content": "The 2020 World Series was played in Texas at Globe Life Field in Arlington.",
+ *         "role": "assistant"
+ *       },
+ *       "logprobs": null
+ *     }
+ *   ],
+ *   "created": 1677664795,
+ *   "id": "chatcmpl-7QyqpwdfhqwajicIEznoc6Q47XAyW",
+ *   "model": "gpt-3.5-turbo-0613",
+ *   "object": "chat.completion",
+ *   "usage": {
+ *     "completion_tokens": 17, 完成令牌
+ *     "prompt_tokens": 57, 提示令牌
+ *     "total_tokens": 74 总量令牌
+ *   }
+ * }
+ */
 @Data
 public class ChatCompletionResponse implements Serializable{
 

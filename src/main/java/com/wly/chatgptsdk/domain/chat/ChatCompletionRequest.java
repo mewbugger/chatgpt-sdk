@@ -11,7 +11,7 @@ import java.util.Map;
 
 
 /**
- * 对话聊天，请求信息依照：OpenAI官网API构建参数；https://platform.openai.com/playground
+ * 对话聊天，请求信息依照：OpenAI官网API构建参数；https://platform.openai.com/docs/api-reference/chat/create
  */
 @Data
 @Builder

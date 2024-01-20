@@ -16,7 +16,6 @@ public class OpenAiInterceptor implements Interceptor {
     /** OpenAi apiKey 需要在官网申请 */
     private final String apiKeyBySystem;
     /** 访问授权接口的认证 Token */
-
     public OpenAiInterceptor(String apiKeyBySystem) {
         this.apiKeyBySystem = apiKeyBySystem;
     }

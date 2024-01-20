@@ -24,7 +24,9 @@ public class DefaultOpenAiSessionFactory implements OpenAiSessionFactory {
     public OpenAiSession openSession() {
         // 1. 日志配置
         HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor();
-        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        // 日志设置成HttpLoggingInterceptor.Level.BODY会导致流式堵塞，原因未知
+        //httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
+        httpLoggingInterceptor.setLevel(HttpLoggingInterceptor.Level.NONE);
 
         // 2. 开启 Http 客户端
         OkHttpClient okHttpClient = new OkHttpClient
